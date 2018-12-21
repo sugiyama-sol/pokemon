@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "NODE_ENV=DEV vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "el-dev": "NODE_ENV=DEV vue-cli-service serve & sleep 5 && NODE_ENV=DEV electron index.js",
-    "el-build:darwin": "electron-packager . Pokemon --platform=darwin --arch=x64",
-    "el-build:win32": "electron-packager . Pokemon --platform=win32 --arch=x64"
+    "el-build:darwin": "vue-cli-service build && electron-packager . Pokemon --platform=darwin --arch=x64",
+    "el-build:win32": "vue-cli-service build && electron-packager . Pokemon --platform=win32 --arch=x64"
   },
   "dependencies": {
     "axios": "^0.18.0",
